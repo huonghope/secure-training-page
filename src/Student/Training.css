@@ -1,0 +1,127 @@
+#sec {
+  padding: 10px 0;
+  background: #fff;
+  text-align: center;
+  word-wrap: break-word;
+}
+#sec h2 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: #2F96EB;
+  text-shadow: 2px 2px #bbb;
+  margin-bottom: 0px;
+  margin-top:30px;
+}
+#sec h4{
+    font-size: 15px;
+    color:gray;
+    font-weight: 200; 
+}
+#sec h2:after {
+  width: 100px;
+  content: "";
+  display: block;
+  border-bottom: 4px solid #2F96EB;
+  margin: 20px auto;
+}
+#sec ul {
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  list-style: none;
+}
+#sec ul li {
+  margin-top: 2vw;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  padding: 30px;
+  width: 35vw;
+  height: 50vh;
+  transition: box-shadow 0.3s;
+  border: 1px solid rgb(212, 208, 208);
+  border-radius:40px;
+  display: flex;
+  flex-flow: column wrap;
+}
+#sec ul li:hover {
+  cursor: pointer;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  background-color: #ECECEC;
+}
+#sec ul li:hover span {
+  color: #2F96EB;
+}
+#sec ul li:hover p {
+  color: #555;
+}
+#sec ul li:hover h3 {
+  color: #2F96EB;
+}
+#sec ul li:hover h3:after {
+  width: 80px;
+}
+#sec ul li span {
+  font-size: 2.6em;
+  display: block;
+  transition: color 0.3s;
+  color: #A2A2A2;
+}
+#sec ul li span:before, #sec ul li span:after {
+  position: static;
+}
+#sec ul li h3 {
+  font-family: "NotoSansKR";
+  color: #6f6f6f;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+#sec ul li h3:after {
+  content: "";
+  position: relative;
+  left: 50%;
+  top: 50px;
+  transform: translateX(-50%);
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: #6f6f6f;
+  transition: width 0.3s;
+  margin-top:5px;
+  margin-bottom:2px;
+}
+#sec ul li p {
+  color: #A2A2A2;
+  text-align: left;
+  text-indent: 1em;
+  font-size: 16px;
+  line-height: 26px;
+  transition: color 0.3s;
+}
+
+.t-img{
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: gray;
+  padding : 1px;
+  border-radius: 50%;
+  margin:10px;
+}
+.t-img img{
+  width: 70%;
+  border-radius: 5px;
+}
+.content{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

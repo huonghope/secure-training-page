@@ -1,0 +1,72 @@
+.wrapper-create-project{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba( #000000, 0.5);
+    z-index: 50;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation-name: animation;
+    animation-duration: 1.5s;
+    .create-project{
+        width: 50%;
+        min-height: 50%;
+        // height: 50%;
+        background: white;
+        padding: 50px;
+        &__container{
+            width: 80%;
+            margin: 0 auto;
+        }
+        .close{
+            float: right;
+            cursor: pointer;
+            transition: all 0.4s;
+            :hover{
+                color: #383E9A;
+            }
+        }
+    }
+    .col {
+        display: flex;
+        margin-bottom: 10px;
+        height: 80px;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: 1px solid black;
+    
+        .form-label{
+            display: flex;
+            align-items: center;
+            width: 40%;
+        }
+        .form-content{
+            display: flex;
+            align-items: center;
+            width: 60%;
+            #form-control{
+                background: red;
+                width: 100%;
+            }
+        }
+    }
+}
+@keyframes animation{
+    0%{
+        opacity: 0;
+    }
+    20%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}

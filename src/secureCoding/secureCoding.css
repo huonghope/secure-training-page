@@ -1,0 +1,315 @@
+.blank{
+    width:100%;
+    height: 5%;
+}
+
+.left {
+    position: relative;
+    float: left;
+    border: 1px solid black;
+    height: 95vh;
+    width: 30vw;
+    overflow-y: "scroll";
+    /* background-color: #252526; */
+    /*#252526 오픈이지*/ 
+    /*#1b2b34 남색*/
+}
+
+.secureTitle {
+    position: relative;
+    bottom:20%;
+    left : 3%;
+    width: 100%;
+    height: 5%;
+    font-size: 20px;
+    /* text-shadow: 2px 2px 2px gray; */
+    color: white;
+  
+}
+
+.secureLanguage {
+    text-align: center;
+    width: 100%;
+    height: 5%;
+    font-size: 20px;
+    /* text-shadow: 2px 2px 2px gray; */
+    color: #054A91;
+    /* background-color: #252526; */
+}
+
+.selectDiv {
+    position: relative;
+    top: 5%;
+    height: 5%;
+    font-size: 20px;
+    /* text-shadow: 2px 2px 2px gray; */
+    color: black;
+    background-color:;
+}
+
+.selectTitle {
+    position: relative;
+    float: left;
+    left: 5%;
+    font-size: 20px;
+    /* text-decoration: underline dotted #E18728;
+    text-underline-position: under; */
+}
+
+.selectCode1 {
+    position: relative;
+    float: left;
+    height: 30px;
+    left: 0%;
+    /* border-radius:0.3em;
+    border : 1px solid white; */
+}
+.selectCode2 {
+    position: relative;
+    float: left;
+    height: 20px;
+    left: 50%;
+font-size: 20px;
+text-align: center;
+align-items: center;
+    /* border-radius:0.3em;
+    border : 1px solid white; */
+}
+
+.stepDiv {
+    position: relative;
+    top: 5%;
+    width: 95%;
+    height: 5%;
+    left: 5%;
+    font-size: 20px;
+    /* text-shadow: 2px 2px 2px gray; */
+    color: #054A91;
+    /* text-decoration: underline dotted #E18728;
+    text-underline-position: under; */
+    /* background-color: #252526; */
+}
+
+.stepDiv2{
+    position: relative;
+    top: 5%;
+    height: 5%;
+    font-size: 20px;
+    color: #054A91;
+    /* text-decoration: underline dotted #E18728;
+    text-underline-position: under; */
+    /* background-color: #252526; */
+}
+.pdf{
+    position: relative;
+    top: 20%;
+    width: 95%;
+    left: 5%;
+    font-size: 20px;
+    color: #054A91;
+    /* text-decoration: underline dotted #E18728;
+    text-underline-position: under; */
+    /* background-color: #252526; */
+}
+.pdf1{
+    position: relative;
+    top: 20%;
+    width: 95%;
+    left: 5%;
+    font-size: 20px;
+    color: #054A91;
+    /* text-decoration: underline dotted #E18728;
+    text-underline-position: under; */
+
+}
+.video{
+    position: relative;
+    top: 25%;
+    height: 5%;
+    width: 95%;
+    left: 5%;
+    font-size: 20px;
+    color: #054A91;
+    /* text-decoration: underline dotted #E18728;
+    text-underline-position: under; */
+    /* background-color: #252526; */
+}
+.stepNumber {
+    position: relative;
+    top: 10%;
+    /* background-color: #1b2b34; */
+}
+
+.stepBackground {
+    /* background-color: #1b2b34; */
+}
+
+.horizontal {
+    position: relative;
+    float: left;
+    height: 90vh;
+    width: 5px;
+    background-color: brown;
+    cursor: ew-resize;
+    resize: horizontal;
+}
+
+.right {
+    position: relative;
+    float: left;
+    border: 1px solid black;
+    height: 95vh;
+    width: 68.5vw;
+}
+
+.titleTop {
+    position: relative;
+    height: 5%;
+    width: 100%;
+    border-bottom: 2px solid gray;
+    border-right: 1px solid black;
+    background-color: #323232;
+}
+
+.titleBottom {
+    position: relative;
+   
+    height: calc(7% + 1px );
+    width: 100%;
+    border-top: 2px solid gray;
+    border-right: 1px solid black;
+    /* background-color: #1b2b34; */
+}
+
+.exit {
+    position: absolute;
+    height: 80%;
+    top : 10%;
+    left: 83%;
+    font-size: 100%;
+    border-radius: 0.3em;
+    border: 1px solid gray;
+
+    font-weight: bold;
+    /* background-color: gray; */
+}
+.step2Title{
+    position: absolute;
+    height: 80%;
+    top : 25%;
+    float: left;
+    /* float: right; */
+    left : 50%;
+    font-size: 100%;
+
+}
+.step_number {
+    position: relative;
+    height: 80%;
+    top : 10%;
+    /* float: right; */
+    left : 52%;
+    font-size: 100%;
+    border-radius: 0.3em;
+    border: 1px solid gray;
+
+    font-weight: bold;
+    /* background-color: gray; */
+}
+
+.submit {
+    position: relative;
+    height: 80%;
+    top : 10%;
+    /* float: right; 92% */
+    left : 87%;  
+    font-size: 100%;
+    border-radius: 0.3em;
+    border: 1px solid gray;
+
+    font-weight: bold;
+    /* background-color: gray; */
+}
+
+.reset {
+    position: relative;
+    height: 80%;
+    top : 10%;
+    /* float: right; */
+    left : 85%;
+    font-size: 100%;
+    border-radius: 0.3em;
+    border: 1px solid gray;
+
+    font-weight: bold;
+    /* background-color: gray; */
+}
+
+
+.eidtorSize {
+    height: calc(100vh - 128px);
+    width: 100%;
+    background-color: #272822;
+}
+
+.lineDecoration {
+    background-color: black;
+}
+.marginDecoration{
+    background-color: black;
+}
+.myGlyphMarginClass {
+    background-image: url("../images/check.png") !important;
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+.myInlineDecoration {
+    color: lightgreen !important;
+    cursor: pointer;
+    /*text-decoration: underline;*/
+    font-weight: bold;
+    font-style: oblique;
+}
+
+.myDiffInlineDecoration {
+    color: lightgreen !important;
+    /*text-decoration: underline;*/
+    font-weight: bold;
+    font-style: oblique;
+}
+
+.modalSize{
+    width:500px;
+    height:350px;
+}
+.modalCorrect {
+    position: relative;
+    top: 10%;
+    display: flex;
+    justify-content: center; /*가로에서 가운데에 요소를 배치하겠다*/
+    /* align-items: center;  세로에서 가운데에 요소를 배치하겠다 style={{backgroundColor:"black"}}*/
+    font-size: 30px;
+}
+.modal{
+    background-color: gray;
+}
+
+.modalText{
+    width:550px;
+    columns: 5;
+    border: 1px solid gray;
+    resize: none;
+}
+
+.modalNext{
+    position: relative;
+    top: 20%;
+    display: flex;
+    justify-content: center; /*가로에서 가운데에 요소를 배치하겠다*/
+}
+
+.myToolbar{
+    height: 10%;
+}
+

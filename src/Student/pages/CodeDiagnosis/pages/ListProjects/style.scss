@@ -1,0 +1,35 @@
+.list-projects{
+    margin: 0 !important;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__tasks{
+        text-align: right;
+        margin-bottom: 50px;
+        margin-right: 50px;
+
+        .btn{
+            width: 200px;
+            margin-left: 10px;
+        }
+        span{
+            margin-left: 6px;
+        }
+    }
+    &__container{
+        width: 98%;
+        display: flex;
+        &--content{
+            display: grid;
+            width: 100%;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            grid-row-gap: 10px;
+            padding: 0 10px;
+        }
+    }
+    .container-task{
+        transition: all 0.4s;
+    }
+}

@@ -1,0 +1,75 @@
+.descTable{
+    position: relative;
+ 
+}
+
+.table.desc{
+    border : 1px solid #ccc;
+}
+.table.desc th{
+    border: 1px solid #ccc;
+    background-color: gray;
+}
+
+
+table.type01 {
+    border-collapse: collapse;
+    
+    line-height: 0.5;
+    width: 100%;
+}
+table.type01 th {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    vertical-align: top;
+    border: 1px solid #ccc;
+    border-left : 0px solid black;
+    background-color: #d9d9d9;
+}
+table.type01 td {
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    vertical-align: top;
+    border: 1px solid #ccc;
+    border-right : 0px solid black;
+}
+
+.secureCode{
+    position: relative;
+    float: left;
+    left: 1.5%;
+    height: 90%;
+    width : 48%;
+    border : 1px solid black;
+
+}
+
+.wrongCode{
+    position: relative;
+    float: left;
+    left: 1.5%;
+    border : 1px solid black;
+    height: 90%;
+    width : 48%;
+ 
+}
+.myText{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    align-items: center;
+  
+}
+.blank{
+    height: 3%;
+    width: 100%;
+    background-color: ;
+}
+.blank1{
+    height: 4%;
+    width: 100%;
+   
+}

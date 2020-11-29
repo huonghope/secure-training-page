@@ -1,0 +1,18 @@
+.dianosis-history{
+    padding: 0;
+    padding-left: 100px;
+    .wrapper-log{
+        background: #efefef;
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        button{
+            cursor: pointer;
+            border: none;
+        }
+    }
+}
+.MuiTimelineItem-missingOppositeContent:before {
+    display: none;
+}

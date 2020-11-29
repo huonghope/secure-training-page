@@ -1,0 +1,51 @@
+.report-detail{
+    &__content{
+        margin-bottom: 20px;
+        padding: 0 20px;
+        p{
+            font-size: 18px;
+            font-weight: bold;
+            padding-left: 10px;
+            margin-bottom: 10px;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        table, th ,td{
+            border: 2px solid  rgb(208, 120, 93);
+            padding: 5px ;
+        }
+        table tr:nth-child(even){
+            background: rgb(252, 236, 232);
+        }
+        table tr:nth-child(odd){
+            background: rgb(248, 215, 205);
+        }
+    }
+
+    &__alert-detail{
+        padding: 0 20px;
+        p{
+            font-size: 18px;
+            font-weight: bold;
+            padding-left: 10px;
+            margin-bottom: 10px;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        table th ,td{
+            border: 2px solid #ddd;
+            padding: 5px;
+        }
+        table thead th {
+            background: rgb(68, 114, 196);
+        }
+        table tr:nth-child(even){
+            background: rgb(207, 213, 234);
+        }
+        table tr:nth-child(odd){
+            background: rgb(233, 235, 245);
+        }
+    }
+}
