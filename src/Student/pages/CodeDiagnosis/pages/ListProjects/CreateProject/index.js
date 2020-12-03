@@ -43,7 +43,7 @@ function CreateProject(props) {
       projectName.length >= 15 ? alert("프로젝트 길이 15길이 제한됩니다.") : alert("프로젝트 타입을 선택하세요.")
       return;
     }else{
-        const url = `http://${process.IP}:10000/users/checkExistsProjectName/${projectName}`;
+        const url = `http://${process.IP}:10000/users/checkExistsProjectName/${userId}/${projectName}`;
         axios.get(url, {
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -64,7 +64,6 @@ function CreateProject(props) {
                 }
               })
                 .then(response => {
-                  console.log(response)
                   props.closeModal(false)
                   const { data } = response;
                 })
@@ -79,10 +78,10 @@ function CreateProject(props) {
 
 
   const handleSubmitSpring = (data) => {
-    const { selectProject, selectLanguage, selectBoot, inputGroup, inputDesc, inputPackageName } = data;
+    const { selectProject, selectLanguage, selectBoot, inputGroupId, inputArtifactId, inputDesc, inputPackageName, dependencies } = data;
 
     const token = JSON.parse(localStorage.getItem('token'))
-    const url = `http://${process.IP}:10000/users/springprojects`;
+ 
     const userId = JSON.parse(localStorage.getItem('uid'));
 
     if(projectName.length >= 15)
@@ -90,28 +89,48 @@ function CreateProject(props) {
       projectName.length >= 15 ? alert("프로젝트 길이 15길이 제한됩니다.") : alert("프로젝트 타입을 선택하세요.")
       return;
     }else{
-      axios.post(url, {
-        projectUserId: userId,
-        projectName,
-        projectType,
-        projectBuildType: selectProject,
-        projectLanguage: selectLanguage,
-        projectSpringBootVer: selectBoot,
-        projectMetaGroup: inputGroup,
-        projectMetaDesc: inputDesc,
-        projectMetaPackage: inputPackageName
-      }, {
+      const url = `http://${process.IP}:10000/users/checkExistsProjectName/${userId}/${projectName}`;
+      axios.get(url, {
         headers: {
-          "Authorization": `Bearer ${token}`
+          'Authorization': `Bearer ${token}`
         }
-      })
+        })
         .then(response => {
-          props.closeModal(false)
+          console.log(response)
+          if(response.data === "exists"){
+            alert("이름 중복됩니다")
+          }else{
+              props.closeModal(false)
+              const url = `http://${process.IP}:10000/users/springprojects`;
+              const { data } = response;
+              axios.post(url, {
+                projectUserId: userId,
+                projectName,
+                projectType,
+                projectBuildType: selectProject,
+                projectLanguage: selectLanguage,
+                projectSpringBootVer: selectBoot,
+                projectMetaGroupId: inputGroupId,
+                projectMetaArtifactId: inputArtifactId,
+                projectMetaDesc: inputDesc,
+                projectMetaPackage: inputPackageName,
+                projectDependencies: dependencies
+              }, {
+                headers: {
+                  "Authorization": `Bearer ${token}`
+                }
+              })
+                .then(response => {
+                  props.closeModal(false)
+                })
+                .catch(error => {
+                  console.log(error)
+                })
+              }
+                
         })
-        .catch(error => {
-          console.log(error)
-        })
-      }
+        .catch(error => console.log(error))
+    }
   }
 
   if (loading) {
@@ -194,7 +213,8 @@ function ProjectSpring(props) {
   const [selectProject, setSelectProject] = useState("Maven");
   const [selectLanguage, setLanguageProject] = useState("Java");
   const [selectBoot, setBootProject] = useState("2.4.0");
-  const [inputGroup, setInputGroup] = useState("")
+  const [inputGroupId, setInputGroupId] = useState("")
+  const [inputArtifactId, setInputArtifactId] = useState("")
   const [inputDesc, setInputDesc] = useState("")
   const [inputPackageName, setInputPackage] = useState("")
   const [dependencies, setDependencies] = useState("web")
@@ -243,7 +263,7 @@ function ProjectSpring(props) {
               </div>
               <div>
                 <TextField
-                  value={inputGroup}
+                  value={inputGroupId}
                   id="standard-full-width"
                   style={{ margin: 8 }}
                   placeholder="Group"
@@ -252,11 +272,30 @@ function ProjectSpring(props) {
                   InputLabelProps={{
                     shrink: true,
                   }}
-                  onChange={(e) => setInputGroup(e.target.value)}
+                  onChange={(e) => setInputGroupId(e.target.value)}
                 />
               </div>
-
             </div>
+            <div className="project-info__label-artifact info-col">
+              <div>
+              Artifact
+              </div>
+              <div>
+                <TextField
+                  value={inputArtifactId}
+                  id="standard-full-width"
+                  style={{ margin: 8 }}
+                  placeholder="Artifact"
+                  fullWidth
+                  margin="normal"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  onChange={(e) => setInputArtifactId(e.target.value)}
+                />
+              </div>
+            </div>
+
             <div className="project-info__label-desc info-col">
               <div>
                 Description
@@ -275,7 +314,6 @@ function ProjectSpring(props) {
                   onChange={(e) => setInputDesc(e.target.value)}
                 />
               </div>
-
             </div>
             <div className="project-info__label-package info-col">
               <div>
@@ -319,7 +357,7 @@ function ProjectSpring(props) {
         color="primary"
         // className={classes.submit}
         style={{ width: '20%', minWidth: '200px' }}
-        onClick={() => handleSubmitSpring({ selectProject, selectLanguage, selectBoot, inputGroup, inputDesc, inputPackageName })}
+        onClick={() => handleSubmitSpring({ selectProject, selectLanguage, selectBoot, inputGroupId, inputArtifactId, inputDesc, inputPackageName, dependencies })}
       >프로젝트 생성</Button>
     </Box>
   </WrapperForSpring>)
