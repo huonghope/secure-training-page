@@ -43,7 +43,7 @@ function CreateProject(props) {
       projectName.length >= 15 ? alert("프로젝트 길이 15길이 제한됩니다.") : alert("프로젝트 타입을 선택하세요.")
       return;
     }else{
-        const url = `http://${process.IP}:10000/users/checkExistsProjectName/${userId}/${projectName}`;
+        const url = `http://${process.IP}:10000/users/check-projectname/${userId}/${projectName}`;
         axios.get(url, {
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -89,7 +89,7 @@ function CreateProject(props) {
       projectName.length >= 15 ? alert("프로젝트 길이 15길이 제한됩니다.") : alert("프로젝트 타입을 선택하세요.")
       return;
     }else{
-      const url = `http://${process.IP}:10000/users/checkExistsProjectName/${userId}/${projectName}`;
+      const url = `http://${process.IP}:10000/users/check-projectname/${userId}/${projectName}`;
       axios.get(url, {
         headers: {
           'Authorization': `Bearer ${token}`

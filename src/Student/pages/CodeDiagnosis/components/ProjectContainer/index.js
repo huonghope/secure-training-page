@@ -89,7 +89,7 @@ export default function ProjectContainer(props) {
                 handleClickAccept: () => { //accept
                     const token = JSON.parse(localStorage.getItem('token'))
                     const userId = JSON.parse(localStorage.getItem('uid'));
-                    const url = `http://${process.IP}:10000/users/startContainer/${userId}`;
+                    const url = `http://${process.IP}:10000/users/start-container/${userId}`;
                     axios.get(url, {
                         headers: {
                             "Authorization": `Bearer ${token}`
@@ -97,6 +97,7 @@ export default function ProjectContainer(props) {
                     })
                     .then(response => {
                         const { data } = response
+                        // props.handleContainerState();
                         if(data === 'success'){
                             props.handleContainerState();
                         }else{
@@ -117,7 +118,7 @@ export default function ProjectContainer(props) {
             if(container.projectId === projectId){
                 const token = JSON.parse(localStorage.getItem('token'))
                 const userId = JSON.parse(localStorage.getItem('uid'));
-                const url = `http://${process.IP}:10000/users/moveeditor/${userId}/${projectId}`;
+                const url = `http://${process.IP}:10000/users/move-editor/${userId}/${projectId}`;
                 axios.get(url, {
                     headers: {
                         "Authorization": `Bearer ${token}`
@@ -125,10 +126,14 @@ export default function ProjectContainer(props) {
                 })
                 .then(response => {
                     const { data } = response;
-                    window.open(
-                        `http://localhost:${data.vscodePort}/?folder=/home/coder/projects/${projectPath}`,
-                        '_blank'
-                    );
+                    if(data !== null){
+                        window.open(
+                            `http://${process.IP}:${data.vscodePort}/?folder=/home/coder/projects/${projectPath}`,
+                            '_blank'
+                        );
+                    }else{
+                        alert("에디터 서버 접근 실패합니다. 다시 확인해주세요")
+                    }
                 })
                     .catch(error => {
                     console.log(error)
@@ -141,7 +146,7 @@ export default function ProjectContainer(props) {
                     handleClickAccept: () => { //accept
                         const token = JSON.parse(localStorage.getItem('token'))
                         const userId = JSON.parse(localStorage.getItem('uid'));
-                        const url = `http://${process.IP}:10000/users/moveeditor/${userId}/${projectId}`;
+                        const url = `http://${process.IP}:10000/users/move-editor/${userId}/${projectId}`;
                         axios.get(url, {
                             headers: {
                                 "Authorization": `Bearer ${token}`
@@ -149,11 +154,16 @@ export default function ProjectContainer(props) {
                         })
                         .then(response => {
                             const { data } = response;
-                            props.handleUpdateContainer(data.projectId);
-                            window.open(
-                                `http://localhost:${data.vscodePort}/?folder=/home/coder/projects/${projectPath}`,
-                                '_blank'
-                            );
+                            if(data !== null){
+                                props.handleUpdateContainer(data.projectId);
+                                window.open(
+                                    `http://${process.IP}:${data.vscodePort}/?folder=/home/coder/projects/${projectPath}`,
+                                    '_blank'
+                                );
+                            }else{
+                                alert("에디터 서버 접근 실패합니다. 다시 확인해주세요")
+                            }
+                            
                         })
                             .catch(error => {
                             console.log(error)

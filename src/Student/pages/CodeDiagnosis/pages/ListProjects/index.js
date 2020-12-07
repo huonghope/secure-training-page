@@ -116,7 +116,6 @@ export default function ListProjects() {
             })
             .then(response => {
                 const { data } = response;
-                console.log(response)
                 if(data.length === 1){
                     //컴테이너 정보를 가져오기 없을때 만들어줌
                     const url = `http://${process.IP}:10000/users/container/${userId}`;
@@ -127,7 +126,7 @@ export default function ListProjects() {
                     }).then(response => {
                         const { data } = response;
                         if(!data){
-                            alert("컨테이너 생성이 과정이 발생하니 나중에 다시 시도해주세요")
+                            alert("컨테이너 생성 과정에 오류 발생하니 나중에 다시 시도해주세요.")
                         }else
                             setContainer(data);
                     }).catch(error => console.log(error))
@@ -141,6 +140,7 @@ export default function ListProjects() {
 
     useEffect(() => {
         if(projects.length !== 0){
+            // alert("aa")
             //컴테이너 정보를 가져오기 없을때 만들어줌
             const token = JSON.parse(localStorage.getItem('token'));
             const userId = JSON.parse(localStorage.getItem('uid'));
@@ -151,10 +151,12 @@ export default function ListProjects() {
                 }
             }).then(response => {
                 const { data } = response;
+                console.log(data)
                 if(!data){
-                    alert("컨테이너 생성이 과정이 발생하니 나중에 다시 시도해주세요")
-                }else
+                    alert("컨테이너 생성 과정에 오류 발생하니 나중에 다시 시도해주세요.")
+                }else{
                     setContainer(data);
+                }
             }).catch(error => console.log(error))
         }
     },[projects.length])
@@ -198,7 +200,7 @@ export default function ListProjects() {
             const { data } = response;
             if(data !== "fail"){
                 window.open(
-                    `http://localhost:${data}`,
+                    `http://${process.IP}:${data}`,
                     '_blank'
                 );
             }else{
@@ -211,7 +213,7 @@ export default function ListProjects() {
     const handleSleepContainer = () => {
         const token = JSON.parse(localStorage.getItem('token'));
         const userId = JSON.parse(localStorage.getItem('uid'));
-        const url = `http://${process.IP}:10000/users/stopContainer/${userId}`;
+        const url = `http://${process.IP}:10000/users/stop-container/${userId}`;
         axios.get(url, {
             headers: {
                 'Authorization': `Bearer ${token}`

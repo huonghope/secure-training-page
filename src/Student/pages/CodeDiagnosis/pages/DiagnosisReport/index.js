@@ -89,7 +89,6 @@ function DiagnosisReport(props) {
             axios.post(url, {
                 userId: userId,
                 projectId: projectId,
-                option: 'Spider',
                 typereport: 'html'
             }, {
                 headers: {
@@ -98,24 +97,25 @@ function DiagnosisReport(props) {
             })
             .then(response => {
                 const { data } = response;
-                setSubmit(false)
-                setLoading(false);
-                setLoadingPage(false)
-                if(data === 'fail'){
-                    alert('해당하는 프로젝트 서비를 연결 실패합니다. 다시 확인해주세요')
-                    return;
-                }
-                const resultAfterFormat = formatResult(data);
-                const { site } = resultAfterFormat;
-                setSites(site)
+                setTimeout(() => {
+                    setSubmit(false);
+                    setLoading(false);
+                    setLoadingPage(false);
+                    if(data === 'fail'){
+                        alert('해당하는 프로젝트 웹 서비스를 접근 실패합니다. 다시 확인해주세요')
+                        return;
+                    }
+                    const resultAfterFormat = formatResult(data);
+                    const { site } = resultAfterFormat;
+                    setSites(site)
+                }, 300);
             })
             .catch(error => {
                 setSubmit(false)
                 setLoading(false);
                 setLoadingPage(false)
-                if (error) {
-                    alert('프로젝트 진단 실패 잠시후 다시 해주세요')
-                }
+                alert('프로젝트 진단 과정에 오류 발생하니 잠시후 다시 해주세요')
+                console.log(error)
             })
         }
 
