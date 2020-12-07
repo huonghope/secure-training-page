@@ -245,13 +245,13 @@ export default function ListProjects() {
             {
                 (projects.length !== 0 && filterProject.length !== 0) &&
                 <div className="container-task">
-                    <p style={{textAlign: 'center', marginBottom: '5px'}}>
+                    <p className="container-info">
                     {
                         container.state ? 
                         <>
                             &#8226; 현재 실행 중인 컨테이너: {
                                 filterProject[0].projectName
-                            } (Container ID: {container.containerId})
+                            } (컨테이너 Id: <span>{container.containerId}</span>)
                         </> :
                         <>
                             &#8226; 현재 컨테이너 중지된 상태 입니다.
