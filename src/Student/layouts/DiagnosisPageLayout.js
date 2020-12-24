@@ -47,7 +47,7 @@ function DiagnosisPageLayout(props) {
     return (
         <div>
             <section id="sec">
-                <h2>Diagnosis</h2>
+                {/* <h2>Diagnosis</h2> */}
                 {/* <h4>Description</h4> */}
             </section>
             <div className={classes.root}>
