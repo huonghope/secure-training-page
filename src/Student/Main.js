@@ -204,7 +204,7 @@ const responseFail = (err) => {
 
 return(
     <div>
-    <div className="wrapper">
+    <div className="wrapper-login">
         <div className="text-wrapper">
             <div className="text-main">Secure <br/>Coding Lab</div>
             <Typography style={{color:'white'}} variant="h6" gutterBottom>

@@ -250,7 +250,7 @@ export default function Profile(props){
     return(
         <div>
         <Container >
-        <div className="container">
+        <div className="container-profile">
             <div className="svg-background"></div>
             <div className="svg-background2"></div>
             <div className="circle"></div>
@@ -296,7 +296,7 @@ export default function Profile(props){
         </div>
         <div className="container2">
           <div className="row-wrap" style={{marginBottom:'9px'}}>
-            <div className="card" style={{float:'left', borderLeft:'5px solid #4e72df'}}>
+            <div className="card-profile" style={{float:'left', borderLeft:'5px solid #4e72df'}}>
             <div className="card-text-container">
               <p className="card-title" style={{color:'#4e72df'}}>통계1</p>
               <p className="card-content">통계1</p>
@@ -304,7 +304,7 @@ export default function Profile(props){
             <AirplayIcon fontSize="large" className="card-icon"/>
             </div>
 
-            <div className="card" style={{float:'right', borderLeft:'5px solid #1cc889'}}>
+            <div className="card-profile" style={{float:'right', borderLeft:'5px solid #1cc889'}}>
             <div className="card-text-container">
               <p className="card-title" style={{color:'#1cc889'}}>통계2</p>
               <p className="card-content">통계2</p>
@@ -314,7 +314,7 @@ export default function Profile(props){
 
           </div>
           <div className="row-wrap">
-            <div className="card" style={{float:'left', borderLeft:'5px solid #36b8cc'}}>
+            <div className="card-profile" style={{float:'left', borderLeft:'5px solid #36b8cc'}}>
             <div className="card-text-container">
               <p className="card-title" style={{color:'#36b8cc'}}>통계3</p>
               <p className="card-content">통계3</p>
@@ -322,7 +322,7 @@ export default function Profile(props){
             <AirplayIcon fontSize="large" className="card-icon"/>
             </div>
 
-            <div className="card" style={{float:'right', borderLeft:'5px solid #f7c649'}}>
+            <div className="card-profile" style={{float:'right', borderLeft:'5px solid #f7c649'}}>
             <div className="card-text-container">
               <p className="card-title" style={{color:'#f7c649'}}>통계4</p>
               <p className="card-content">통계4</p>

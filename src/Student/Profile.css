@@ -8,7 +8,7 @@
   background-color: #212121;
 } */
 
-.container {
+.container-profile {
   float:left;
   position: relative;
   background-color: #ECEFF1;
@@ -38,7 +38,7 @@
   /* justify-content: space-around; */
 }
 
-.card{
+.card-profile{
   position: relative;
   width: 45%;
   height:90%;
